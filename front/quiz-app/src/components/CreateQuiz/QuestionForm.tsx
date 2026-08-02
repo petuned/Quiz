@@ -99,7 +99,7 @@ const QuestionForm = ({ onAddQuestion, initQuestion }: Props) => {
       <h2 className="text-xl font-semibold">Add Question (1-30)</h2>
       <div>
         <label className="block mb-1 font-medium">
-          Question
+          Question *
           <input
             type="text"
             value={questionText}
@@ -111,8 +111,9 @@ const QuestionForm = ({ onAddQuestion, initQuestion }: Props) => {
         </label>
       </div>
       <div className="space-y-3">
-        <label className="block font-medium">Choices (2-5)</label>
+        <label className="block font-medium">Choices (2-5) *</label>
         <p>Mark one of the choices as the correct one</p>
+        <p>The order of choices will be shuffled</p>
 
         {choices.map((choice, index) => (
           <div key={index} className="flex items-center gap-3 max-w-full">

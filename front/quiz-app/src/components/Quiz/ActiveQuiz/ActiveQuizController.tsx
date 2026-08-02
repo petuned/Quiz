@@ -27,9 +27,11 @@ const ActiveQuizController = () => {
   return (
     isActive && (
       <div className="bg-white p-3">
-        <button className="btn btn-red ml-2" onClick={quit}>
-          Quit
-        </button>
+        <div className="flex justify-end">
+          <button className="btn btn-white md:border-2 md:mr-2" onClick={quit}>
+            Quit
+          </button>
+        </div>
         <h2 className="wrap-anywhere text-center mt-2 text-xl font-semibold text-gray-800">
           {activeQuiz.name} ({activeQuiz.questions.length} questions)
         </h2>
