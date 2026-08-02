@@ -29,19 +29,19 @@ export const NewUserSchema = z.object({
 });
 
 export const QuestionSchema = z.object({
-  question: z.string().min(1).max(150),
+  question: z.string().min(1).max(200),
   choices: z
-    .array(z.string().min(1).max(150))
+    .array(z.string().min(1).max(200))
     .refine((items) => new Set(items).size === items.length, {
       message: "Answer choices for question have to be unique"
     }),
-  answer: z.string().min(1).max(150)
+  answer: z.string().min(1).max(200)
 });
 
 export const NewQuizSchema = z.object({
   category: z.string("User"),
-  subcategory: z.string().min(1).max(30),
-  name: z.string().min(1).max(35),
+  subcategory: z.string().min(1).max(60),
+  name: z.string().min(1).max(90),
   description: z.string().min(1).max(450),
   questions: z.array(QuestionSchema).min(1).max(30)
 });

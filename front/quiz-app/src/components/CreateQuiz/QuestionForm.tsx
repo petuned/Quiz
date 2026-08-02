@@ -103,7 +103,7 @@ const QuestionForm = ({ onAddQuestion, initQuestion }: Props) => {
           <input
             type="text"
             value={questionText}
-            maxLength={150}
+            maxLength={200}
             onChange={(e) => setQuestionText(e.target.value)}
             className="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Enter question text"
@@ -128,7 +128,7 @@ const QuestionForm = ({ onAddQuestion, initQuestion }: Props) => {
             <input
               type="text"
               value={choice}
-              maxLength={150}
+              maxLength={200}
               onChange={(e) => handleChoiceChange(index, e.target.value)}
               className="flex-1 border max-w-50 md:max-w-full rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder={`Choice ${index + 1}`}

@@ -95,7 +95,7 @@ const QuizForm = ({ onSubmitQuiz, initQuiz }: Props) => {
             <input
               type="text"
               value={title}
-              maxLength={35}
+              maxLength={90}
               onChange={(e) => setTitle(e.target.value)}
               className="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter quiz title"
@@ -110,7 +110,7 @@ const QuizForm = ({ onSubmitQuiz, initQuiz }: Props) => {
             <input
               type="text"
               value={category}
-              maxLength={30}
+              maxLength={60}
               onChange={(e) => setCategory(e.target.value)}
               className="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="e.g. Music, Sports"
