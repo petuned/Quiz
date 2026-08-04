@@ -1,14 +1,27 @@
 # Quiz!
 
-- Answer multiple choice questions related to music, television, history and many other topics
-- Register and create your own quizzes; for entertainment, or to help with studying
-- Edit or remove created quizzes
+## Features
 
-Implemented with TypeScript, React, Redux Toolkit, Node.js, Express, Tailwind, MongoDB and Mongoose.
+* Answer multiple choice questions related to music, television, history and many other topics
+* Register to create your own quizzes; for entertainment, or to help with studying
+* Edit or remove created quizzes
+* Responsive design for desktop and mobile devices
 
-AI was used with quiz creation components and redux selectors.
+## Tech stack & implementation
 
-Testing:
+*	**Type Safety**: *TypeScript* and schema-based data validation with *Mongoose*
+*	**Security**: Token-based user authentication and authorization
+*	**Testing**: Unit and component tests, API endpoint tests with REST Client
+*	**Frontend**: *React* for dynamic UIs, *React Router* for client-side routing, state management with *Redux Toolkit*, style and responsiveness with vanilla and *Tailwind CSS*
+*	**Backend**: *Node.js + Express* for application logic and REST APIs
+*	**Database**: *MongoDB Atlas* for flexible schemas and future changes in data
 
-- Backend: Jest
-- Frontend: Vitest, React Testing Library
+AI was used to assist with the development of quiz creation components and Redux selectors
+
+## Upcoming changes
+
+* Difficulty levels
+* Improved test coverage, e2e testing
+* Improved accessibility
+* Miscellaneous improvements
+* More features?
