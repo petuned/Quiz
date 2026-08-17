@@ -12,7 +12,7 @@
 *	**Type safety & validation**: *TypeScript* for static typing, *Mongoose* and *Zod* for runtime data validation
 *	**Authentication & security**: Token-based user authentication and authorization
 *	**Testing**: Unit and component tests, API endpoint tests with REST Client
-  **CI**: *GitHub Actions* for automated frontend component testing and production build verification
+*	**CI**: *GitHub Actions* for automated frontend component testing and production build verification
 *	**Frontend**: *React* for UIs, *React Router* for client-side routing, state management with *Redux Toolkit*, style and responsiveness with vanilla and *Tailwind CSS*
 *	**Backend**: *Node.js + Express* for application logic and REST APIs
 *	**Database**: *MongoDB Atlas* for flexible schemas and future changes in data
