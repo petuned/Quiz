@@ -27,7 +27,7 @@ const NavBarMobile = () => {
   };
 
   return (
-    <div className="flex justify-between items-center p-5 bg-linear-to-r from-indigo-500 to-purple-500">
+    <div className="flex justify-between items-center p-5 bg-indigo-500">
       <h1 className="text-center text-4xl font-bold text-white leading-tight">
         Quiz!
       </h1>
