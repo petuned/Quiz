@@ -1,0 +1,43 @@
+name: Frontend CI
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "front/quiz-app/**"
+      - ".github/workflows/frontend-ci.yml"
+
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "front/quiz-app/**"
+      - ".github/workflows/frontend-ci.yml"
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: front/quiz-app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: front/quiz-app
+        run: npm ci
+
+      - name: Run tests
+        working-directory: front/quiz-app
+        run: npm run test -- --run
+
+      - name: Build frontend
+        working-directory: front/quiz-app
+        run: npm run build
