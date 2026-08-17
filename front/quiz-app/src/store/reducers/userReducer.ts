@@ -133,7 +133,7 @@ export const addUserQuiz = (newQuiz: NewQuiz) => {
       const quiz = await quizService.createQuiz(newQuiz, user);
       if (quiz) {
         dispatch(addQuiz(quiz));
-        dispatch(setTimedNotification(`New quiz "${quiz.name}" added!`));
+        dispatch(setTimedNotification(`New quiz "${quiz.name}" added!`, 3));
       }
     } catch (error: unknown) {
       const message = getErrorMessage(error);
@@ -161,7 +161,7 @@ export const deleteUserQuiz = (id: string) => {
       }
       await quizService.deleteQuiz(id, user);
       dispatch(deleteQuiz(id));
-      dispatch(setTimedNotification("Quiz deleted"));
+      dispatch(setTimedNotification("Quiz deleted", 3));
     } catch (error: unknown) {
       const message = getErrorMessage(error);
       if (axios.isAxiosError(error)) {
@@ -190,7 +190,7 @@ export const editUserQuiz = (id: string, quiz: NewQuiz) => {
       const updatedQuiz = await quizService.updateQuiz(id, quiz, user);
       if (updatedQuiz) {
         dispatch(editQuiz(updatedQuiz));
-        dispatch(setTimedNotification(`Quiz "${updatedQuiz.name}" updated!`));
+        dispatch(setTimedNotification(`Quiz "${updatedQuiz.name}" updated!`, 3));
       }
     } catch (error: unknown) {
       const message = getErrorMessage(error);
