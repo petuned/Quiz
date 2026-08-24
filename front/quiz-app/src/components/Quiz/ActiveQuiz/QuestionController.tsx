@@ -18,10 +18,10 @@ interface Props {
   setShowQuestion: Dispatch<SetStateAction<boolean>>;
 }
 
-const Questions = ({ setShowQuestion }: Props) => {
+const QuestionController = ({ setShowQuestion }: Props) => {
   const dispatch = useAppDispatch();
   const activeQuiz: Quiz = useAppSelector((state) => state.activeQuiz.quiz);
-  const [playerAnswer, setAnswer] = useState<string>("");
+  const [answer, setAnswer] = useState<string>("");
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [currentQuestion, setCurrentQuestion] = useState<string>("");
   const [currentOptions, setCurrentOptions] = useState<string[]>([]);
@@ -55,8 +55,8 @@ const Questions = ({ setShowQuestion }: Props) => {
 
   const handleAnswerSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    dispatch(setPlayerAnswer(playerAnswer));
-    if (playerAnswer === currentCorrectAnswer) {
+    dispatch(setPlayerAnswer(answer));
+    if (answer === currentCorrectAnswer) {
       dispatch(updateScore());
     }
     const index = currentIndex + 1;
@@ -84,7 +84,7 @@ const Questions = ({ setShowQuestion }: Props) => {
               <input
                 type="radio"
                 name="option"
-                checked={playerAnswer === option}
+                checked={answer === option}
                 onChange={() => changeAnswer(option)}
               />
               <p className="wrap-anywhere inline ml-2 text-base md:text-lg lg:text-xl">
@@ -94,7 +94,7 @@ const Questions = ({ setShowQuestion }: Props) => {
           </div>
         ))}
         <div className="text-center">
-          {playerAnswer ? (
+          {answer ? (
             <button type="submit" className="btn btn-blue">
               Next
             </button>
@@ -109,4 +109,4 @@ const Questions = ({ setShowQuestion }: Props) => {
   );
 };
 
-export default Questions;
+export default QuestionController;

@@ -34,11 +34,9 @@ const QuizList = ({ category, selectQuiz }: Props) => {
                   <div
                     key={j}
                     onClick={() => selectQuiz(el._id)}
-                    className="cursor-pointer flex items-center justify-center min-w-50 h-30 px-2 overflow-hidden bg-indigo-500 hover:bg-blue-700 shadow-md hover:shadow-xl rounded-2xl text-center"
+                    className="cursor-pointer flex items-center justify-center min-w-50 max-w-70 h-30 overflow-hidden wrap-anywhere px-2 bg-indigo-500 hover:bg-blue-700 shadow-md hover:shadow-xl rounded-2xl text-center"
                   >
-                    <p className="text-white text-base lg:text-lg overflow-hidden">
-                      {el.name}
-                    </p>
+                    <p className="text-white text-base lg:text-lg">{el.name}</p>
                   </div>
                 ))}
               </div>
