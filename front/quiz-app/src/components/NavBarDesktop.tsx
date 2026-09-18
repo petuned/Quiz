@@ -22,27 +22,25 @@ const NavBarDesktop = () => {
   };
 
   return (
-    <div>
-      <div className="p-4 flex justify-end gap-2">
-        {user && <p className="m-2">Hello {user.name}</p>}
-        <Link to="/create">
-          <button className="btn btn-blue font-semibold">Create</button>
-        </Link>
-        {user ? (
-          <button onClick={handleLogout} className="btn btn-white font-semibold">
-            Logout
-          </button>
-        ) : (
-          <>
-            <Link to="/login">
-              <button className="btn btn-white font-semibold">Login</button>
-            </Link>
-            <Link to="/register">
-              <button className="btn btn-white font-semibold">Register</button>
-            </Link>
-          </>
-        )}
-      </div>
+    <div className="p-4 flex justify-end gap-2">
+      {user && <p className="m-2">Hello {user.name}</p>}
+      <Link to="/create">
+        <button className="btn btn-blue font-semibold">Create</button>
+      </Link>
+      {user ? (
+        <button onClick={handleLogout} className="btn btn-white font-semibold">
+          Logout
+        </button>
+      ) : (
+        <>
+          <Link to="/login">
+            <button className="btn btn-white font-semibold">Login</button>
+          </Link>
+          <Link to="/register">
+            <button className="btn btn-white font-semibold">Register</button>
+          </Link>
+        </>
+      )}
     </div>
   );
 };

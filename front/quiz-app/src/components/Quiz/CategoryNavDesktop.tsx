@@ -25,7 +25,7 @@ const CategoryNavDesktop = ({ category, setCategory }: Props) => {
 
   return (
     <div className="w-[20%] flex flex-col bg-indigo-500">
-      <h1 className="text-center text-4xl p-5 mb-2 font-bold text-white leading-tight">
+      <h1 className="text-center text-4xl pt-5 mb-2 font-bold text-white leading-tight">
         Quiz!
       </h1>
       <div

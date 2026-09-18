@@ -18,7 +18,7 @@ const QuizList = ({ category, selectQuiz }: Props) => {
   const grouped = useAppSelector(selectGroupedQuizzesByCategory(category));
 
   return (
-    <div className="min-h-screen h-fit p-2 md:p-4 bg-white">
+    <div className="h-fit p-2 md:p-4 bg-white">
       {grouped && (
         <div className="px-4">
           <h1 className="md:hidden pb-4 text-2xl font-semibold">

@@ -65,9 +65,9 @@ const QuizController = () => {
   return isActive ? (
     <ActiveQuizController />
   ) : isDesktop ? (
-    <div className="flex flex-row h-fit">
+    <div className="flex flex-row min-h-screen h-fit">
       <CategoryNavDesktop category={category} setCategory={setCategory} />
-      <div className="w-full">
+      <div className="w-[80%]">
         <NavBarDesktop />
         <QuizList category={category} selectQuiz={handleSelect} />
       </div>
