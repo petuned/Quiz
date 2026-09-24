@@ -1,6 +1,7 @@
 import express from "express";
 import quizRouter from "./routes/quiz";
 import userRouter from "./routes/user";
+import testingRouter from "./routes/testing";
 import mongoose from "mongoose";
 import { unknownEndpoint, errorMiddleware } from "./utils/middleware";
 import config from "./utils/config";
@@ -26,6 +27,9 @@ if (!config.MONGODB_URI) {
 
 app.use("/api/user", userRouter);
 app.use("/api/quiz", quizRouter);
+if (process.env.NODE_ENV === "test") {
+  app.use("/api/testing", testingRouter);
+}
 app.use(unknownEndpoint);
 app.use(errorMiddleware);
 
