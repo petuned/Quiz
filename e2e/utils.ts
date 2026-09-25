@@ -23,4 +23,23 @@ const quiz = {
   ]
 };
 
-export default { user, quiz };
+const newQuiz = {
+  category: "User",
+  subcategory: "TV",
+  name: "Yellowstone",
+  description: "Tiny quiz for testing purposes",
+  questions: [
+    {
+      question: "What family is the series focused on?",
+      choices: ["The Duttons", "The Frasers"],
+      answer: "The Duttons"
+    }
+  ]
+};
+
+// Unique name for parallel testing
+export const generateName = () => {
+  return `${newQuiz.name} ${crypto.randomUUID()}`;
+};
+
+export default { user, quiz, newQuiz };
