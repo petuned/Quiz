@@ -19,7 +19,7 @@ const createQuiz = async (quiz: NewQuiz, user: User) => {
   const config = {
     headers: { Authorization: `Bearer ${user.token}` }
   };
-  const response = await axios.post<NewQuiz>("/api/quiz/", quiz, config);
+  const response = await axios.post<NewQuiz>("/api/quiz/userquizzes", quiz, config);
   return response.data;
 };
 

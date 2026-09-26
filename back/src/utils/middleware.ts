@@ -24,9 +24,15 @@ export const errorMiddleware = (
   }
 
   if (error.name === "ValidationError") {
-    return res.status(400).json({
-      error: error.message
-    });
+    return res.status(400).json({ error: error.message });
+  }
+
+  if (error.name === "ReferenceError") {
+    return res.status(404).json({ error: error.message });
+  }
+
+  if (error.name === "InvalidIdError") {
+    return res.status(400).json({ error: error.message });
   }
 
   if (
