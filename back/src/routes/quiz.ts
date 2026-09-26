@@ -1,4 +1,5 @@
 import express, { Request, Response, NextFunction } from "express";
+import quizService from "../services/quizService";
 import { parseQuiz } from "../utils/utils";
 import { extractToken, extractUser } from "../utils/middleware";
 import { UserQuizModel } from "../models/userQuizModel";
@@ -22,14 +23,11 @@ router.post(
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       if (req.user) {
+        console.log("Creating a new quiz");
         const quiz = req.body;
         const validatedQuiz = parseQuiz(quiz);
+        const savedQuiz = await quizService.addQuiz(validatedQuiz, req.user._id);
 
-        const newQuiz = new UserQuizModel({
-          ...validatedQuiz,
-          userId: req.user._id
-        });
-        const savedQuiz = await newQuiz.save();
         res.status(201).json(savedQuiz);
       }
     } catch (error: unknown) {
