@@ -1,33 +1,22 @@
-const user = {
-  username: "TestiTyyppi",
-  name: "Testari",
-  password: "Testaamistavarten1"
-};
+import { TestInfo } from "@playwright/test";
 
-const quiz = {
-  category: "User",
-  subcategory: "TV",
-  name: "Outlander",
-  description: "Small 2 question quiz for testing purposes",
-  questions: [
-    {
-      question: "Who is the main female character in the series?",
-      choices: ["Claire", "Laoghaire", "Myrcella"],
-      answer: "Claire"
-    },
-    {
-      question: "Who is the main male character?",
-      choices: ["Jamie", "Frank", "Murtagh"],
-      answer: "Jamie"
-    }
-  ]
+export function getTestUser(testInfo: TestInfo) {
+  return {
+    username: testInfo.project.name,
+    name: testInfo.project.name,
+    password: "Testaamistavarten1"
+  };
+}
+
+const existingQuizInfo = {
+  name: "Outlander"
 };
 
 const newQuiz = {
   category: "User",
   subcategory: "TV",
   name: "Yellowstone",
-  description: "Tiny quiz for testing purposes",
+  description: "An American neo-Western drama television series",
   questions: [
     {
       question: "What family is the series focused on?",
@@ -37,9 +26,14 @@ const newQuiz = {
   ]
 };
 
-// Unique name for parallel testing
-export const generateName = () => {
-  return `${newQuiz.name} ${crypto.randomUUID()}`;
+const mutableQuizInfo = {
+  name: "Nier Automata",
+  newDescription:
+    "NieR: Automata tells the story of androids 2B, 9S and A2 and their battle to reclaim the machine-driven dystopia overrun by powerful machines."
 };
 
-export default { user, quiz, newQuiz };
+const deletableQuizInfo = {
+  name: "The Good Daughter"
+};
+
+export default { existingQuizInfo, newQuiz, mutableQuizInfo, deletableQuizInfo };

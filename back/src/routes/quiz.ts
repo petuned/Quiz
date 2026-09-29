@@ -77,6 +77,7 @@ router.put(
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       if (req.user) {
+        console.log("Editing a user quiz");
         const quizId = req.params.id;
         const userId = req.user._id;
         const quiz = req.body;
